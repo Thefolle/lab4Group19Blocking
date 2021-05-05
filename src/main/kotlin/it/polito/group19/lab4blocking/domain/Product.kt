@@ -8,11 +8,16 @@ class Product(
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         var pid: Long?,
-        var name: String?,
-        var category: String?,
-        var price: Float?,
-        var quantity: Int?
+        var name: String,
+        var category: String,
+        var price: Float,
+        var quantity: Int
 ) {
+
+        fun addQuantity(quantityToAdd: Int): Int{
+                quantity += quantityToAdd
+                return quantity
+        }
 
         fun toDTO() = ProductDTO(
                 pid = pid!!,

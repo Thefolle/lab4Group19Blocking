@@ -6,7 +6,7 @@ interface ProductService {
 
     fun addProduct(product: ProductDTO): ProductDTO
 
-    fun updateQuantity(quantity: Int): ProductDTO
+    fun updateQuantity(productID: Long, quantityToAdd: Int): ProductDTO
 
     fun getProduct(productID: Long): ProductDTO
 
